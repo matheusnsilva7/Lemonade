@@ -1,0 +1,46 @@
+.container{
+    height:100vh;
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    background: url(../../img/lemonade.jpg) no-repeat;
+    background-size: cover;
+}
+.container div{
+    margin-top: 8rem;
+    display:flex;
+    gap: 3rem;
+}
+.container h1{
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 600;
+}.container p{
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+.btn{
+    background-color: #4a9104;
+    padding:1rem 4rem;
+    border-radius: .2rem;
+    color:white;
+    font-weight: 700;
+    font-size: 1.3rem;
+}.btn:hover{
+    background-color: #3c7404;
+}
+@media(min-width:700px){
+    .container div{
+        gap: 10rem;
+    }
+    .container h1{
+        font-size: 10rem;
+    }.container p{
+        font-size: 2rem;
+        width:60rem;
+    }
+}
