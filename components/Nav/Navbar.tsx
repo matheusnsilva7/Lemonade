@@ -1,18 +1,21 @@
 import { useState } from "react";
 import Data from "./Data";
+import { useRouter } from "next/router";
 
 import Classes from "./Nav.module.css";
+import Link from "next/link";
 
-const NavBar = () => {
+const NavBar = ({ onChangePage }: any) => {
   const [mobileNav, setMobileNav] = useState(false);
   const [language, setLanguage] = useState("ENG");
+  const router = useRouter();
   const data: {
     ENG: { nav: { id: number; name: string; href: string }[] };
     POR: { nav: { id: number; name: string; href: string }[] };
   } = Data;
 
   return (
-    <nav  className={Classes.nav}>
+    <nav className={Classes.nav}>
       <button className={Classes.button} onClick={() => setMobileNav(true)}>
         <div className={Classes.icon}></div>
       </button>
@@ -35,11 +38,34 @@ const NavBar = () => {
         <ul>
           {data.ENG.nav.map(
             (link: { id: number; name: string; href: string }, i: number) => {
+              const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+                e.preventDefault();
+                onChangePage(true);
+                setMobileNav(false);
+                if (link.href.replace("/", "")  === router.asPath.replace("/", "")) {
+                  onChangePage(false);
+                  router.push(link.href);
+                }
+                if (link.href.replace("/", "")  !== router.asPath.replace("/", "")) {
+                  setTimeout(() => {
+                    onChangePage(false);
+                    router.push(link.href);
+                  }, 300);
+                }
+              };
               return (
                 <li key={link.id + i}>
-                  <a href={link.href} onClick={() => setMobileNav(false)}>
+                  <Link
+                    className={
+                      link.href === router.asPath.replace("/", "")
+                        ? Classes.checked
+                        : ""
+                    }
+                    href={link.href}
+                    onClick={handleClick}
+                  >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               );
             }

@@ -1,0 +1,167 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+}
+.containerProducts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: column;
+  margin: 2.5rem;
+}
+.containerProductsInformation {
+  animation: 1.5s normal productAnimation;
+  transition: 0.3s all;
+}
+@keyframes productAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+.productAnimation {
+  opacity: 0;
+  transform: translateX(-5rem);
+}
+.containerImg {
+  display: flex;
+  flex-direction: column;
+  animation: 1.5s normal productImgAnimation;
+  transition: 0.3s all;
+}
+@keyframes productImgAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+.productImgAnimation {
+  opacity: 0;
+  transform: translateX(5rem);
+}
+.containerProducts h4 {
+  font-size: 2rem;
+}
+.containerProducts p {
+  font-size: 1.4rem;
+  width: 30rem;
+  padding: 1rem 0;
+}
+.containerProducts span {
+  font-size: 2rem;
+}
+.product {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.containerProduct {
+  display: flex;
+}
+.secondProduct {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background-color: aqua;
+  margin-left: 4rem;
+  cursor: pointer;
+  transition: all 1.5s;
+  transform: translate(0px, 0px) scale(1);
+}
+.secondAnimation {
+ transform: translate(-6rem, -14rem) scale(2.5);
+}
+.firstProduct {
+  width: 8rem;
+  margin: auto 0;
+  height: 8rem;
+  border-radius: 50%;
+  background-color: rgb(0, 255, 13);
+  cursor: pointer;
+  transition: all 1.5s;
+  transform: translate(0px, 0px) scale(1);
+}
+.firstanimation {
+   transform: translate(6rem, -14rem) scale(2.5);
+   z-index: 3;
+}
+.img {
+  margin: 1rem 0;
+  width: 8rem;
+  height: 6rem;
+}
+@media (min-width: 700px) {
+  .containerProducts {
+    flex-direction: row;
+  }
+  .containerImg {
+    width: 57rem;
+  }
+  .containerProducts h4 {
+    font-size: 2.5rem;
+  }
+  .containerProducts p {
+    font-size: 1.5rem;
+    width: 40rem;
+    padding: 4rem 0;
+  }
+  .containerProducts span {
+    font-size: 2.5rem;
+  }
+  .product {
+    width: 30rem;
+    height: 30rem;
+  }
+  .containerImg {
+    align-items: center;
+  }
+  .secondProduct {
+    width: 10rem;
+    height: 10rem;
+    margin: 3rem;
+  }
+  .firstProduct {
+    width: 10rem;
+    margin: 3rem;
+    height: 10rem;
+  }
+  .img {
+    margin: 1rem 0;
+    width: 10rem;
+    height: 8rem;
+  }
+  .firstanimation {
+    transform: translate(8rem, -23rem) scale(3);
+ }
+ .secondAnimation {
+  transform: translate(-8rem, -23rem) scale(3);
+ }
+}
+@media (min-width: 1000px) {
+  .containerImg {
+    flex-direction: row;
+  }
+  .containerProduct {
+    flex-direction: column;
+  }
+  .firstanimation {
+    transform: translate(-28.5rem, 8rem) scale(3);
+ }
+ .secondAnimation {
+  transform: translate(-28.2rem, -8rem) scale(3);
+ }  
+}

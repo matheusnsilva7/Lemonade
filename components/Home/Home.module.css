@@ -18,10 +18,43 @@
     font-size: 4rem;
     text-align: center;
     font-weight: 600;
-}.container p{
+    animation: 1.2s normal titleAnimation;
+    transition: .3s all ;
+}
+@keyframes titleAnimation {
+    0%{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+.title{
+    opacity: 0;
+    transform: translateX(5rem);
+}
+.container p{
     font-size: 1.5rem;
     text-align: center;
     font-weight: 600;
+    animation: 1.2s normal subTitleAnimation;
+    transition: .3s all ;
+}
+@keyframes subTitleAnimation {
+    0%{
+        opacity: 0;
+        transform: translateX(-5rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+.subtitle{
+    opacity: 0;
+        transform: translateX(-5rem);
 }
 .btn{
     background-color: #4a9104;
@@ -30,7 +63,29 @@
     color:white;
     font-weight: 700;
     font-size: 1.3rem;
-}.btn:hover{
+    animation: 1.2s  normal buttonAnimation;
+    transition: .3s all ;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@keyframes buttonAnimation {
+    0%{
+        opacity: 0;
+        transform: translateY(5rem);
+    }
+    50%{
+        opacity: 0;
+        transform: translateY(5rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+.buttonAnimation{
+    opacity: 0;
+    transform: translateY(5rem);
+}
+.btn:hover{
     background-color: #3c7404;
 }
 @media(min-width:700px){

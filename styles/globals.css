@@ -17,7 +17,8 @@ body {
   font-weight: 300;
   color: #ffff9e;
   line-height: 1.9;
-  overflow-x: hidden;
+  overflow: hidden;
+
 }
 li {
   list-style: none;

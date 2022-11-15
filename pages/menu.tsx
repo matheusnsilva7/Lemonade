@@ -1,7 +1,7 @@
 import MenuPage from "../components/Menu/MenuPage";
 
-const Menu = () => {
-    return(<div>MEnu</div>)
+const Menu = ({ onchange }: { onchange: boolean }) => {
+  return <MenuPage onchange={onchange}/>;
 };
 
 export default Menu;

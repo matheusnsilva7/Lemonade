@@ -67,7 +67,7 @@
   font-weight: 600;
 }
 .links ul li a:hover {
-  color: #ffff9e;
+  color: #455e14
 }
 .links div:last-child {
   display: flex;
@@ -84,14 +84,27 @@
   border-bottom: 4px solid transparent;
 }
 .links button:hover {
-  color: #ffff9e;
-  border-bottom: 4px solid #4a9104;
+  color: #455e14;
+  border-bottom: 4px solid #455e14;
 }
 .links .checked {
-  color: #ffff9e;
+  color: #455e14;
   border-bottom: 4px solid #ffff9e;
 }
 @media (min-width: 1000px) {
+  .nav{
+    animation: 1.5s normal NavAnimation;
+  }
+  @keyframes NavAnimation {
+    0%{
+      transform: translateY(-5rem);
+      opacity:0
+    }
+    100%{
+      transform: translateY(0rem);
+      opacity: 1;
+    }
+  }
   .icon {
     display: none;
   }
