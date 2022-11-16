@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     gap:2rem;
-    background: url(../../img/lemonade.jpg) no-repeat;
+    background: url(../img/lemonade.jpg) no-repeat;
     background-size: cover;
 }
 .container div{
@@ -19,7 +19,7 @@
     text-align: center;
     font-weight: 600;
     animation: 1.2s normal titleAnimation;
-    transition: .3s all ;
+    transition: .4s all ;
 }
 @keyframes titleAnimation {
     0%{
@@ -40,7 +40,7 @@
     text-align: center;
     font-weight: 600;
     animation: 1.2s normal subTitleAnimation;
-    transition: .3s all ;
+    transition: .4s all ;
 }
 @keyframes subTitleAnimation {
     0%{
@@ -64,7 +64,7 @@
     font-weight: 700;
     font-size: 1.3rem;
     animation: 1.2s  normal buttonAnimation;
-    transition: .3s all ;
+    transition: .4s all ;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 @keyframes buttonAnimation {

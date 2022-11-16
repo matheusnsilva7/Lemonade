@@ -1,14 +1,25 @@
 import Link from "next/link";
+import data from "./Data";
 
 import classes from "./Home.module.css";
 
-const Home = ({ onchange }: { onchange: boolean }) => {
+const Home = ({
+  onchange,
+  language,
+}: {
+  onchange: boolean;
+  language: string;
+}) => {
+  const Data: {
+    title: string;
+    subTitle: string;
+    firstBtn: string;
+    secondBtn: string;
+  } = data[language === "ENG" ? "ENG" : "POR"].home;
   return (
     <div className={classes.container}>
-      <h1 className={onchange ? classes.title : ""}>The lemonade stand</h1>
-      <p className={onchange ? classes.subtitle : ""}>
-        the most fresh and healthy lemonade stand
-      </p>
+      <h1 className={onchange ? classes.title : ""}>{Data.title}</h1>
+      <p className={onchange ? classes.subtitle : ""}>{Data.subTitle}</p>
       <div>
         <Link
           className={
@@ -16,7 +27,7 @@ const Home = ({ onchange }: { onchange: boolean }) => {
           }
           href="menu"
         >
-          MENU
+          {Data.firstBtn}
         </Link>
         <Link
           className={
@@ -24,7 +35,7 @@ const Home = ({ onchange }: { onchange: boolean }) => {
           }
           href="#"
         >
-          STORES
+          {Data.secondBtn}
         </Link>
       </div>
     </div>

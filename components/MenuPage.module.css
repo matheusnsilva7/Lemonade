@@ -16,7 +16,7 @@
 }
 .containerProductsInformation {
   animation: 1.5s normal productAnimation;
-  transition: 0.3s all;
+  transition: 0.4s all;
 }
 @keyframes productAnimation {
   0% {
@@ -36,7 +36,7 @@
   display: flex;
   flex-direction: column;
   animation: 1.5s normal productImgAnimation;
-  transition: 0.3s all;
+  transition: 0.4s all;
 }
 @keyframes productImgAnimation {
   0% {
@@ -83,7 +83,7 @@
   transform: translate(0px, 0px) scale(1);
 }
 .secondAnimation {
- transform: translate(-6rem, -14rem) scale(2.5);
+  transform: translate(-6rem, -14rem) scale(2.5);
 }
 .firstProduct {
   width: 8rem;
@@ -96,13 +96,24 @@
   transform: translate(0px, 0px) scale(1);
 }
 .firstanimation {
-   transform: translate(6rem, -14rem) scale(2.5);
-   z-index: 3;
+  transform: translate(6rem, -14rem) scale(2.5);
+  z-index: 3;
 }
 .img {
   margin: 1rem 0;
   width: 8rem;
   height: 6rem;
+}
+.containerProducts .change > * {
+  animation: 3s forwards changeAnimation;
+}
+@keyframes changeAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @media (min-width: 700px) {
   .containerProducts {
@@ -110,6 +121,7 @@
   }
   .containerImg {
     width: 57rem;
+    margin-top: 15rem;
   }
   .containerProducts h4 {
     font-size: 2.5rem;
@@ -146,22 +158,23 @@
   }
   .firstanimation {
     transform: translate(8rem, -23rem) scale(3);
- }
- .secondAnimation {
-  transform: translate(-8rem, -23rem) scale(3);
- }
+  }
+  .secondAnimation {
+    transform: translate(-8rem, -23rem) scale(3);
+  }
 }
 @media (min-width: 1000px) {
   .containerImg {
     flex-direction: row;
+    margin-top: 0;
   }
   .containerProduct {
     flex-direction: column;
   }
   .firstanimation {
     transform: translate(-28.5rem, 8rem) scale(3);
- }
- .secondAnimation {
-  transform: translate(-28.2rem, -8rem) scale(3);
- }  
+  }
+  .secondAnimation {
+    transform: translate(-28.2rem, -8rem) scale(3);
+  }
 }

@@ -1,19 +1,24 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import Navbar from "../components/Nav/Navbar";
+import Navbar from "../components/Navbar";
 import { useState } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [page, newpage] = useState<Boolean>(false);
+  const [page, newPage] = useState(false);
+  const [language, setLanguage] = useState<string>("ENG");
 
-  const changepage = (value: boolean) => {
-    newpage(value);
+  const changePage = (value: boolean) => {
+    newPage(value);
+  };
+
+  const changeLanguage = (value: string) => {
+    setLanguage(value);
   };
 
   return (
     <>
-      <Navbar onChangePage={changepage} />
-      <Component onchange={page} {...pageProps} />
+      <Navbar onChangePage={changePage} onChangeLaguage={changeLanguage} language={language}/>
+      <Component onChange={page} language={language} {...pageProps} />
     </>
   );
 }

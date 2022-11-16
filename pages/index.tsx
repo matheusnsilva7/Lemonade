@@ -1,9 +1,9 @@
-import Home from "../components/Home/Home";
+import Home from "../components/Home";
 
-export default function page({ onchange }: { onchange: boolean }) {
+export default function page({ onChange , language }: { onChange: boolean , language : string}) {
   return (
     <>
-      <Home onchange={onchange} />
+      <Home onchange={onChange} language={language} />
     </>
   );
 }
