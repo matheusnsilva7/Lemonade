@@ -37,9 +37,7 @@ const Menu = ({
           ref={changeProduct}
           className={
             onchange
-              ? classes.productAnimation +
-                " " +
-                classes.containerProductsInformation
+              ? `${classes.productAnimation} ${classes.containerProductsInformation}`
               : classes.containerProductsInformation
           }
         >
@@ -71,7 +69,7 @@ const Menu = ({
                   : classes.firstProduct
               }
               onClick={() => {
-                !product && setTimeout(() =>  setProduct(true) , 300);
+                !product && setTimeout(() =>  setProduct(true) , 1);
                 !product && changeProduct.current?.classList.remove(classes.change)
               }}
             >
@@ -84,7 +82,7 @@ const Menu = ({
                   : classes.secondProduct + " " + classes.secondMoveBack
               }
               onClick={() =>  {
-                product && setTimeout(() =>  setProduct(false) , 300)
+                product && setTimeout(() =>  setProduct(false) , 1)
                 product && changeProduct.current?.classList.remove(classes.change)
               }
               }

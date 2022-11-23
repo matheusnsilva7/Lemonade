@@ -10,21 +10,26 @@ interface NavConfig {
   onChangeLaguage: (value: string) => void;
   language: string | undefined;
 }
+interface data {
+  nav: {
+    id: number;
+    name: string;
+    href: string;
+  }[];
+}
 
-const NavBar = ({ onChangePage, onChangeLaguage, language } : NavConfig) => {
+const NavBar = ({ onChangePage, onChangeLaguage, language }: NavConfig) => {
   const [mobileNav, setMobileNav] = useState(false);
   const router = useRouter();
-  const data: {
-    nav: {
-      id: number;
-      name: string;
-      href: string;
-    }[];
-  } = Data[language === "ENG" ? "ENG" :  "POR"];
+  const data: data = Data[language === "ENG" ? "ENG" : "POR"];
 
   return (
     <nav className={Classes.nav}>
-      <button className={Classes.button} onClick={() => setMobileNav(true)}>
+      <button
+        aria-label="Btn"
+        className={Classes.button}
+        onClick={() => setMobileNav(true)}
+      >
         <div className={Classes.icon}></div>
       </button>
       {mobileNav && (
@@ -50,20 +55,12 @@ const NavBar = ({ onChangePage, onChangeLaguage, language } : NavConfig) => {
                 e.preventDefault();
                 onChangePage(true);
                 setMobileNav(false);
-                if (
-                  link.href.replace("/", "") === router.asPath.replace("/", "")
-                ) {
-                  onChangePage(false);
-                  router.push(link.href);
-                }
-                if (
-                  link.href.replace("/", "") !== router.asPath.replace("/", "")
-                ) {
-                  setTimeout(() => {
-                    onChangePage(false);
-                    router.push(link.href);
-                  }, 1000);
-                }
+                link.href.replace("/", "") !== router.asPath.replace("/", "")
+                  ? setTimeout(() => {
+                      onChangePage(false);
+                      router.push(link.href);
+                    }, 400)
+                  : onChangePage(false);
               };
               return (
                 <li key={link.id + i}>
@@ -87,7 +84,7 @@ const NavBar = ({ onChangePage, onChangeLaguage, language } : NavConfig) => {
           <button
             className={language === "ENG" ? Classes.checked : ""}
             onClick={() => {
-              onChangeLaguage("ENG")
+              onChangeLaguage("ENG");
               setMobileNav(false);
             }}
           >
@@ -96,7 +93,7 @@ const NavBar = ({ onChangePage, onChangeLaguage, language } : NavConfig) => {
           <button
             className={language !== "ENG" ? Classes.checked : ""}
             onClick={() => {
-              onChangeLaguage("POR")
+              onChangeLaguage("POR");
               setMobileNav(false);
             }}
           >

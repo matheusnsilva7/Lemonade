@@ -1,0 +1,218 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+.information {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 1.4rem;
+  padding: 2rem 0;
+  gap: 5rem;
+}
+.Product {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  column-gap: 5rem;
+  font-size: 1.4rem;
+  padding: 2rem 0;
+  position: relative;
+}
+.Product > *,
+.information > * {
+  margin: 0 auto;
+}
+.Product h5 {
+  grid-column: span 3;
+  text-align: center;
+  font-weight: 300;
+}
+.containerImg {
+  display: flex;
+}
+.img {
+  width: 5rem;
+  height: 5rem;
+  background-color: rgb(21, 255, 0);
+  border-radius: 50%;
+}
+.Product input {
+  width: 4rem;
+  height: 3rem;
+  text-align: center;
+}
+.containerInformation {
+  animation: 1s forwards containerInformationAnimation;
+  transition: 0.4s all;
+}
+@keyframes containerInformationAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+.containerInformationAnimation {
+  animation: 0.4s forwards containerInformationAnimationReverse;
+}
+@keyframes containerInformationAnimationReverse {
+  0% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+}
+.containerForm {
+  border: 1px solid rgb(129, 129, 129);
+  width: 30rem;
+  padding: 2rem;
+  background-color: #fcfcfc;
+  border-radius: 2rem;
+  animation: 1s forwards containerFormAnimation;
+  transition: 0.4s all;
+}
+@keyframes containerFormAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+.containerFormAnimation {
+  animation: 0.4s forwards containerFormAnimationReverse;
+}
+@keyframes containerFormAnimationReverse {
+  0% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+}
+.containerForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.containerForm h4 {
+  font-size: 1.7rem;
+  text-align: center;
+  font-weight: 400;
+}
+.containerForm select {
+  border-radius: 3rem;
+  height: 3rem;
+  text-align: center;
+}
+.containerForm label {
+  font-size: 1.4rem;
+}
+.containerForm h5 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.container span {
+  font-size: 1.3rem;
+  text-align: center;
+}
+.container button {
+  width: 20rem;
+  height: 3rem;
+  margin: 0 auto;
+  border-radius: 3rem;
+  background-color: #3c7404;
+  border: none;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+.textErr {
+  position: absolute;
+  color: red;
+  width: 7.5rem;
+  right: 50%;
+  bottom: 0;
+}
+.selectErr {
+  border: solid 1px red;
+  background-color: rgba(255, 0, 0, 0.3);
+}
+.colorErr {
+  color: red;
+}
+@media (min-width: 700px) {
+  .information,
+  .Product {
+    width: 70vw;
+  }
+  .containerForm {
+    width: 50vw;
+  }
+}
+@media (min-width: 1000px) {
+  .container {
+    flex-direction: row;
+    gap: 4rem;
+  }
+  .Product {
+    grid-template-columns: 0.4fr 0.6fr 1fr 1fr;
+    gap: 0;
+    padding-top: 6rem;
+  }
+  .information,
+  .Product {
+    width: 55vw;
+  }
+  .img {
+    width: 7rem;
+    height: 7rem;
+  }
+  .containerForm {
+    padding: 3rem 2rem;
+    width: 25vw;
+  }
+  .Product h5 {
+    grid-area: 1/2;
+    text-align: left;
+  }
+  .containerForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .containerForm h4 {
+    padding-bottom: 2rem;
+  }
+  .Product span {
+    font-size: 1.5rem;
+    padding: 0 0 0 3rem;
+  }
+  .containerForm span {
+    font-size: 2rem;
+  }
+  .containerImg {
+    width: 3rem;
+    height: 3rem;
+  }
+  .container button {
+    width: 20rem;
+    height: 4rem;
+  }
+}

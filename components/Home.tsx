@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Head from "next/head";
 import data from "./Data";
 
 import classes from "./Home.module.css";
@@ -18,6 +19,9 @@ const Home = ({
   } = data[language === "ENG" ? "ENG" : "POR"].home;
   return (
     <div className={classes.container}>
+      <Head>
+        <title>Home</title>
+      </Head>
       <h1 className={onchange ? classes.title : ""}>{Data.title}</h1>
       <p className={onchange ? classes.subtitle : ""}>{Data.subTitle}</p>
       <div>

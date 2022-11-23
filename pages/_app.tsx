@@ -7,17 +7,9 @@ export default function App({ Component, pageProps }: AppProps) {
   const [page, newPage] = useState(false);
   const [language, setLanguage] = useState<string>("ENG");
 
-  const changePage = (value: boolean) => {
-    newPage(value);
-  };
-
-  const changeLanguage = (value: string) => {
-    setLanguage(value);
-  };
-
   return (
     <>
-      <Navbar onChangePage={changePage} onChangeLaguage={changeLanguage} language={language}/>
+      <Navbar onChangePage={newPage} onChangeLaguage={setLanguage} language={language}/>
       <Component onChange={page} language={language} {...pageProps} />
     </>
   );

@@ -15,11 +15,15 @@
   margin: 2.5rem;
 }
 .containerProductsInformation {
-  animation: 1.5s normal productAnimation;
+  animation: 1.3s normal productAnimation;
   transition: 0.4s all;
 }
 @keyframes productAnimation {
   0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+  40% {
     opacity: 0;
     transform: translateX(-5rem);
   }
@@ -35,7 +39,7 @@
 .containerImg {
   display: flex;
   flex-direction: column;
-  animation: 1.5s normal productImgAnimation;
+  animation: 1s normal productImgAnimation;
   transition: 0.4s all;
 }
 @keyframes productImgAnimation {
@@ -54,14 +58,17 @@
 }
 .containerProducts h4 {
   font-size: 2rem;
+  animation: 0s;
 }
 .containerProducts p {
   font-size: 1.4rem;
   width: 30rem;
   padding: 1rem 0;
+  animation: 0s;
 }
 .containerProducts span {
   font-size: 2rem;
+  animation: 0s;
 }
 .product {
   width: 20rem;
@@ -105,10 +112,13 @@
   height: 6rem;
 }
 .containerProducts .change > * {
-  animation: 3s forwards changeAnimation;
+  animation: 1s forwards changeAnimation;
 }
 @keyframes changeAnimation {
   0% {
+    opacity: 0;
+  }
+  50% {
     opacity: 0;
   }
   100% {

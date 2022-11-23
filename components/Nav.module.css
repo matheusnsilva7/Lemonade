@@ -6,6 +6,7 @@
   right: 3rem;
   background-color: transparent;
   border: none;
+  z-index: 4;
   cursor: pointer;
 }
 .icon,
@@ -33,7 +34,7 @@
   position: fixed;
   right: -65vw;
   transition: 1s all;
-  z-index: 2;
+  z-index: 10;
 }
 .show {
   right: 0;
