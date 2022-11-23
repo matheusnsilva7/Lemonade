@@ -27,26 +27,32 @@ const Data = {
       },
     },
     Pickup: {
-      information:{
+      information: {
         product: "Product",
-        quantity : "Quantity",
-        price:"price,"
+        quantity: "Quantity",
+        price: "Price",
       },
-      products:[{
-        name:"Cheap lemonade",
-        price:"$0.50"
-      },{
-        name:"Fancy lemonade",
-        price:"$1.00"
-      }],
+      products: [
+        {
+          name: "Cheap lemonade",
+          price: "$0.50",
+          err: "Only 10 drinks",
+        },
+        {
+          name: "Fancy lemonade",
+          price: "$1.00",
+          err: "Only 10 drinks",
+        },
+      ],
       Order: {
         summary: "Order Summary",
-        location:"which location?",
-        locations: ["Sâo Paulo","Rio de janeiro", "Santa Catarina"],
+        location: "which location?",
+        locations: "--Please choose an option--",
         cost: "Total cost",
-        btn: "ORDER"
-      }
-    }
+        btn: "ORDER",
+      },
+      text: "The store is not opening today."
+    },
   },
   POR: {
     nav: [
@@ -74,6 +80,33 @@ const Data = {
           "O limão possui cafeína, limoneno, vitamina C e pectina, que aceleram o seu metabolismo e diminuem a absorção de gorduras no corpo.",
         price: "$1.00",
       },
+    },
+    Pickup: {
+      information: {
+        product: "Produto",
+        quantity: "Quantidade",
+        price: "Preço",
+      },
+      products: [
+        {
+          name: "Limonada barata",
+          price: "$0.50",
+          err: "Apenas 10 bebidas",
+        },
+        {
+          name: "Limonada chique",
+          price: "$1.00",
+          err: "Apenas 10 bebidas",
+        },
+      ],
+      Order: {
+        summary: "Resumo do pedido",
+        location: "Qual local?",
+        locations: "--Por favor escolha uma opção--",
+        cost: "Custo total",
+        btn: "PEDIR",
+      },
+      text: "A loja de bebidas não está abrindo hoje."
     },
   },
 };

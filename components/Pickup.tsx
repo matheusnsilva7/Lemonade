@@ -1,5 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import LoadingIndicator from "./LoadingIndicator";
+import Data from "./Data";
+
 import classes from "./Pickup.module.css";
+import lemonade from "../img/lemonade.png";
 
 const Pickup = ({
   onchange,
@@ -8,9 +12,11 @@ const Pickup = ({
   onchange: boolean;
   language: string;
 }) => {
+  const [order, setOrder] = useState(false);
   const [firstLemonade, setFirstLemonade] = useState(0);
   const [secondLemonade, setSecondLemonade] = useState(0);
   const [selectChange, setSelectChange] = useState("");
+  const data = Data[language === "ENG" ? "ENG" : "POR"].Pickup;
   const [err, setErr] = useState({
     firstDrink: false,
     secondDrink: false,
@@ -49,6 +55,7 @@ const Pickup = ({
       });
       return;
     }
+    setOrder(true);
   };
 
   return (
@@ -61,42 +68,48 @@ const Pickup = ({
         }
       >
         <div className={classes.information}>
-          <h4>Products</h4>
-          <h4>Quantity</h4>
-          <h4>Price</h4>
+          <h4>{data.information.product}</h4>
+          <h4>{data.information.quantity}</h4>
+          <h4>{data.information.price}</h4>
         </div>
         <hr />
         <div className={classes.Product}>
-          <h5>Limonada barata</h5>
-          <div className={classes.img}></div>
+          <h5>{data.products[0].name}</h5>
+          <div className={`${classes.img} ${classes.backgroundGreen}`}>
+            <img src={lemonade.src} className={classes.img} alt="lemonade" />
+          </div>
           <input
             type="number"
             name="name"
             min="0"
             max="10"
+            value={firstLemonade * 2}
             className={err.firstDrink ? classes.selectErr : ""}
             onChange={(e) => setFirstLemonade(+e.target.value * 0.5)}
           />
           {err.firstDrink && (
-            <h5 className={classes.textErr}>Only 10 drinks</h5>
+            <h5 className={classes.textErr}>{data.products[0].err}</h5>
           )}
-          <span>$0.50</span>
+          <span>${data.products[0].price}</span>
         </div>
         <div className={classes.Product}>
-          <h5>Limonada barata</h5>
-          <div className={classes.img}></div>
+          <h5>{data.products[1].name}</h5>
+          <div className={`${classes.img} ${classes.backgroundBlue}`}>
+            <img src={lemonade.src} className={classes.img} alt="lemonade" />
+          </div>
           <input
             type="number"
             name="name"
             min="0"
             max="10"
+            value={secondLemonade}
             className={err.secondDrink ? classes.selectErr : ""}
             onChange={(e) => setSecondLemonade(+e.target.value)}
           />
           {err.secondDrink && (
-            <h5 className={classes.textErr}>Only 10 drinks</h5>
+            <h5 className={classes.textErr}>{data.products[1].err}</h5>
           )}
-          <span>$1.00</span>
+          <span>${data.products[1].price}</span>
         </div>
       </div>
       <div
@@ -106,25 +119,31 @@ const Pickup = ({
             : classes.containerForm
         }
       >
-        <h4>Order summary</h4>
+        <h4>{data.Order.summary}</h4>
         <form onSubmit={onSubmit}>
-          <label>which location?</label>
+          <label>{data.Order.location}</label>
           <select
             onChange={(e) => setSelectChange(e.target.value)}
             className={err.location ? classes.selectErr : ""}
           >
-            <option value="">--Please choose an option--</option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
+            <option value="">{data.Order.locations}</option>
+            <option value="saopaulo">São Paulo</option>
+            <option value="rio">Rio de Janeiro</option>
+            <option value="santacatarina">Santa Catarina</option>
           </select>
-          <h5>Total Cost</h5>
+          <h5>{data.Order.cost}</h5>
           <span className={err.price ? classes.colorErr : ""}>
             ${firstLemonade + secondLemonade}
           </span>
-          <button>ORDER</button>
+          <button>{data.Order.btn}</button>
         </form>
       </div>
+      {order && (
+        <div onClick={() => setOrder(false)} className={classes.containerStore}>
+          <LoadingIndicator />
+          <h4>{data.text}</h4>
+        </div>
+      )}
     </div>
   );
 };
