@@ -1,101 +1,123 @@
-.container{
-    height:100vh;
-    width:100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:2rem;
-    background: url(../img/lemonade.jpg) no-repeat; 
-    background-size: cover;
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: url(../img/background.jpg) no-repeat;
+  animation: 1s normal backgroundAnimation;
+  background-size: cover;
+  transition: 0.4 all;
 }
-.container div{
-    margin-top: 8rem;
-    display:flex;
-    gap: 3rem;
+@keyframes backgroundAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-.container h1{
-    font-size: 4rem;
-    text-align: center;
-    font-weight: 600;
-    animation: 1.2s normal titleAnimation;
-    transition: .4s all ;
+.backgroundAnimation {
+  animation: 0.5s forwards backgroundReverseAnimation;
+}
+@keyframes backgroundReverseAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.container div {
+  margin-top: 8rem;
+  display: flex;
+  gap: 3rem;
+}
+.container h1 {
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 600;
+  animation: 1.2s normal titleAnimation;
+  transition: 0.4s all;
 }
 @keyframes titleAnimation {
-    0%{
-        opacity: 0;
-        transform: translateX(5rem);
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(0rem);
-    }
-}
-.title{
+  0% {
     opacity: 0;
     transform: translateX(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
 }
-.container p{
-    font-size: 1.5rem;
-    text-align: center;
-    font-weight: 600;
-    animation: 1.2s normal subTitleAnimation;
-    transition: .4s all ;
+.title {
+  opacity: 0;
+  transform: translateX(5rem);
+}
+.container p {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  animation: 1.2s normal subTitleAnimation;
+  transition: 0.4s all;
 }
 @keyframes subTitleAnimation {
-    0%{
-        opacity: 0;
-        transform: translateX(-5rem);
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(0rem);
-    }
-}
-.subtitle{
+  0% {
     opacity: 0;
-        transform: translateX(-5rem);
+    transform: translateX(-5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
 }
-.btn{
-    background-color: green;
-    padding:1rem 4rem;
-    border-radius: .2rem;
-    color:white;
-    font-weight: 700;
-    font-size: 1.3rem;
-    animation: 1.2s  normal buttonAnimation;
-    transition: .4s all ;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.subtitle {
+  opacity: 0;
+  transform: translateX(-5rem);
+}
+.btn {
+  background-color: green;
+  padding: 1rem 4rem;
+  border-radius: 0.2rem;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  animation: 1.2s normal buttonAnimation;
+  transition: 0.4s all;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 @keyframes buttonAnimation {
-    0%{
-        opacity: 0;
-        transform: translateY(5rem);
-    }
-    50%{
-        opacity: 0;
-        transform: translateY(5rem);
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0rem);
-    }
-}
-.buttonAnimation{
+  0% {
     opacity: 0;
     transform: translateY(5rem);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
 }
-.btn:hover{
-    background-color: #3c7404;
+.buttonAnimation {
+  opacity: 0;
+  transform: translateY(5rem);
 }
-@media(min-width:700px){
-    .container div{
-        gap: 10rem;
-    }
-    .container h1{
-        font-size: 10rem;
-    }.container p{
-        font-size: 2rem;
-        width:60rem;
-    }
+.btn:hover {
+  background-color: #3c7404;
+}
+@media (min-width: 700px) {
+  .container div {
+    gap: 10rem;
+  }
+  .container h1 {
+    font-size: 10rem;
+  }
+  .container p {
+    font-size: 2rem;
+    width: 60rem;
+  }
 }

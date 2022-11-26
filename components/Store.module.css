@@ -1,40 +1,40 @@
-.map{
-    width:100vw;
-    height:100vh;
-    z-index:1;
-    animation: 1s forwards mapAnimation;
-    opacity:1;
-    transition: 0.4s all;
+.map {
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  animation: 1s forwards mapAnimation;
+  opacity: 1;
+  transition: 0.4s all;
 }
-.pageMap{
-    animation: 1s forwards mapAnimation;
-    transition: 0.4s all;
+.pageMap {
+  animation: 1s forwards mapAnimation;
+  transition: 0.4s all;
 }
 @keyframes mapAnimation {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-.mapAnimation{
-    animation: 0.4s forwards mapAnimationReverse
+.mapAnimation {
+  animation: 0.4s forwards mapAnimationReverse;
 }
 @keyframes mapAnimationReverse {
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
-.popup p{
-    font-size: 5rem;
+.popup p {
+  font-size: 5rem;
 }
 @media (min-width: 1000px) {
-    .map{
-        margin-top:15vh;
-        height:85vh;
-    }
+  .map {
+    margin-top: 15vh;
+    height: 85vh;
+  }
 }

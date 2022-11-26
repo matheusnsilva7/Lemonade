@@ -1,18 +1,23 @@
-import Store from "../components/Store";
 import dynamic from "next/dynamic";
+import Head from "next/head";
+
+interface props {
+  onChange: boolean;
+}
 
 const MyAwesomeMap = dynamic(() => import("../components/Store"), {
   ssr: false,
 });
 
-const stores = ({
-  onChange,
-  language,
-}: {
-  onChange: boolean;
-  language: string;
-}) => {
-  return <MyAwesomeMap onchange={onChange} language={language} />;
+const stores = ({ onChange }: props) => {
+  return (
+    <>
+      <Head>
+        <title>Lemonade - Store</title>
+      </Head>
+      <MyAwesomeMap onchange={onChange} />
+    </>
+  );
 };
 
 export default stores;

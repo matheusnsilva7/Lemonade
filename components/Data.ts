@@ -51,7 +51,7 @@ const Data = {
         cost: "Total cost",
         btn: "ORDER",
       },
-      text: "The store is not opening today."
+      text: "The store is not opening today.",
     },
   },
   POR: {
@@ -59,10 +59,10 @@ const Data = {
       { id: 1, name: "Home", href: "/" },
       { id: 2, name: "Menu", href: "menu" },
       { id: 3, name: "Lojas", href: "stores" },
-      { id: 4, name: "Order pickup", href: "pickup" },
+      { id: 4, name: "Pedido para retirar", href: "pickup" },
     ],
     home: {
-      title: "A barraca de limonada",
+      title: "Barraca de Limonada",
       subTitle: "a banca de limonada mais fresca e saudável",
       firstBtn: "MENU",
       secondBtn: "LOJAS",
@@ -72,7 +72,7 @@ const Data = {
         title: "Limonada barata",
         paragraph:
           "O limão possui cafeína, limoneno, vitamina C e pectina, que aceleram o seu metabolismo e diminuem a absorção de gorduras no corpo.",
-        price: "$0.70",
+        price: "$0.50",
       },
       secondProduct: {
         title: "Limonada chique",
@@ -106,7 +106,7 @@ const Data = {
         cost: "Custo total",
         btn: "PEDIR",
       },
-      text: "A loja de bebidas não está abrindo hoje."
+      text: "A loja de bebidas não está abrindo hoje.",
     },
   },
 };

@@ -44,14 +44,14 @@
   justify-content: center;
   align-items: center;
 }
-.img img{
-  width:6rem;
-  height:5rem;
+.img img {
+  width: 6rem;
+  height: 5rem;
 }
-.backgroundGreen{
+.backgroundGreen {
   background-color: rgb(0, 255, 13);
 }
-.backgroundBlue{
+.backgroundBlue {
   background-color: aqua;
 }
 .Product input {
@@ -60,7 +60,7 @@
   text-align: center;
 }
 .containerInformation {
-  animation: 1s forwards containerInformationAnimation;
+  animation: 1.5s forwards containerInformationAnimation;
   transition: 0.4s all;
 }
 @keyframes containerInformationAnimation {
@@ -91,8 +91,8 @@
   width: 30rem;
   padding: 2rem;
   background-color: #fcfcfc;
-  border-radius: 2rem;
-  animation: 1s forwards containerFormAnimation;
+  border-radius: 1rem;
+  animation: 1.5s forwards containerFormAnimation;
   transition: 0.4s all;
 }
 @keyframes containerFormAnimation {
@@ -170,33 +170,33 @@
 .colorErr {
   color: red;
 }
-.containerStore{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100vw;
+.containerStore {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
   background-color: #fcfcfc7e;
-  z-index:40;
+  z-index: 40;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.containerStore h4{
+.containerStore h4 {
   background-color: rgb(233, 233, 233);
   border-radius: 2rem;
   font-size: 3rem;
   padding: 20rem;
-  animation: 1.5s forwards textAnimation
+  animation: 1.5s forwards textAnimation;
 }
 @keyframes textAnimation {
-  0%{
+  0% {
     opacity: 0;
   }
-  60%{
+  60% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
@@ -251,7 +251,7 @@
     font-size: 2rem;
   }
   .textErr {
-    padding-left:1.5rem;
+    padding-left: 1.5rem;
     transform: translateX(0%);
   }
   .containerImg {

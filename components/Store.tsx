@@ -1,5 +1,4 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import Data from "./Data";
 
 import classes from "./Store.module.css";
 import "leaflet/dist/leaflet.css";
@@ -22,19 +21,11 @@ const data: {
   },
 ];
 
-const Store = ({
-  onchange,
-  language,
-}: {
+interface props {
   onchange: boolean;
-  language: string;
-}) => {
-  const location: [number, number][] = [
-    [-23.5706673, -46.6635181],
-    [-22.8764055, -43.1005146],
-    [-27.0096093, -48.6143955],
-  ];
+}
 
+const Store = ({ onchange }: props) => {
   return (
     <div
       className={

@@ -1,13 +1,20 @@
 import MenuPage from "../components/MenuPage";
+import Head from "next/head";
 
-const Menu = ({
-  onChange,
-  language,
-}: {
+interface props {
   onChange: boolean;
   language: string;
-}) => {
-  return <MenuPage onchange={onChange} language={language} />;
+}
+
+const Menu = ({ onChange, language }: props) => {
+  return (
+    <>
+      <Head>
+        <title>Lemonade - Menu</title>
+      </Head>
+      <MenuPage onchange={onChange} language={language} />
+    </>
+  );
 };
 
 export default Menu;

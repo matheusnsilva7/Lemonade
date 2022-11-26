@@ -1,45 +1,71 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import data from "./Data";
 
 import classes from "./MenuPage.module.css";
 import lemonade from "../img/lemonade.png";
 
-const Menu = ({
-  onchange,
-  language,
-}: {
+interface prop {
   onchange: boolean;
   language: string;
-}) => {
+}
+interface dataInformation {
+  firstProduct: {
+    title: string;
+    paragraph: string;
+    price: string;
+  };
+  secondProduct: {
+    title: string;
+    paragraph: string;
+    price: string;
+  };
+}
+interface prop {
+  onchange: boolean;
+  language: string;
+}
+
+const Menu = ({ onchange, language }: prop) => {
   const [product, setProduct] = useState(true);
-  const changeProduct = useRef<HTMLDivElement | null>(null)
-  const Data: {
-    firstProduct: {
-      title: string;
-      paragraph: string;
-      price: string;
-    };
-    secondProduct: {
-      title: string;
-      paragraph: string;
-      price: string;
-    };
-  } = data[language === "ENG" ? "ENG" : "POR"].Menu;
-  
-  useEffect(()=>
-    changeProduct.current?.classList.add(classes.change)
-  ,[product])
+  const changeProduct = useRef<HTMLDivElement | null>(null);
+  const Data: dataInformation = data[language === "ENG" ? "ENG" : "POR"].Menu;
+
+  const clickHandler = (boolean: boolean) => {
+    product !== boolean &&
+      changeProduct.current?.classList.remove(classes.change);
+    setTimeout(() => {
+      setProduct(boolean);
+      changeProduct.current?.classList.add(classes.change);
+    }, 1);
+  };
+
+  const styleClasses = (
+    boolean: boolean | null,
+    style1: string,
+    style2: string,
+    style3: string
+  ) => {
+    if (boolean === null) {
+      return onchange
+        ? classes[style1] + " " + classes[style2]
+        : classes[style1] + " " + classes[style3];
+    }
+    return product === boolean
+      ? classes[style1] + " " + classes[style2]
+      : classes[style1] + " " + classes[style3];
+  };
 
   return (
     <div className={classes.container}>
       <div className={classes.containerProducts}>
         <div
           ref={changeProduct}
-          className={
-            onchange
-              ? `${classes.productAnimation} ${classes.containerProductsInformation}`
-              : classes.containerProductsInformation
-          }
+          className={styleClasses(
+            null,
+            "containerProductsInformation",
+            "productAnimation",
+            ""
+          )}
         >
           <h4>
             {product ? Data.firstProduct.title : Data.secondProduct.title}
@@ -54,38 +80,34 @@ const Menu = ({
           </span>
         </div>
         <div
-          className={
-            onchange
-              ? classes.productImgAnimation + " " + classes.containerImg
-              : classes.containerImg
-          }
+          className={styleClasses(
+            null,
+            "containerImg",
+            "productImgAnimation",
+            ""
+          )}
         >
           <div className={classes.product}></div>
           <div className={classes.containerProduct}>
             <div
-              className={
-                product
-                  ? classes.firstanimation + " " + classes.firstProduct
-                  : classes.firstProduct
-              }
-              onClick={() => {
-                !product && setTimeout(() =>  setProduct(true) , 1);
-                !product && changeProduct.current?.classList.remove(classes.change)
-              }}
+              className={styleClasses(
+                true,
+                "firstProduct",
+                "firstanimation",
+                " "
+              )}
+              onClick={clickHandler.bind(null, true)}
             >
               <img src={lemonade.src} className={classes.img} alt="lemonade" />
             </div>
             <div
-              className={
-                !product
-                  ? classes.secondProduct + " " + classes.secondAnimation
-                  : classes.secondProduct + " " + classes.secondMoveBack
-              }
-              onClick={() =>  {
-                product && setTimeout(() =>  setProduct(false) , 1)
-                product && changeProduct.current?.classList.remove(classes.change)
-              }
-              }
+              className={styleClasses(
+                false,
+                "secondProduct",
+                "secondAnimation",
+                "secondMoveBack"
+              )}
+              onClick={clickHandler.bind(null, false)}
             >
               <img src={lemonade.src} className={classes.img} alt="lemonade" />
             </div>

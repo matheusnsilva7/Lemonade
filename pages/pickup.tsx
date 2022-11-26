@@ -1,13 +1,20 @@
 import Pickup from "../components/Pickup";
+import Head from "next/head";
 
-const pickup = ({
-  onChange,
-  language,
-}: {
+interface props {
   onChange: boolean;
   language: string;
-}) => {
-  return <Pickup onchange={onChange} language={language} />;
+}
+
+const pickup = ({ onChange, language }: props) => {
+  return (
+    <>
+      <Head>
+        <title>Lemonade - Order</title>
+      </Head>
+      <Pickup onchange={onChange} language={language} />
+    </>
+  );
 };
 
 export default pickup;

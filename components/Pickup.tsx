@@ -5,13 +5,12 @@ import Data from "./Data";
 import classes from "./Pickup.module.css";
 import lemonade from "../img/lemonade.png";
 
-const Pickup = ({
-  onchange,
-  language,
-}: {
+interface props {
   onchange: boolean;
   language: string;
-}) => {
+}
+
+const Pickup = ({ onchange, language }: props) => {
   const [order, setOrder] = useState(false);
   const [firstLemonade, setFirstLemonade] = useState(0);
   const [secondLemonade, setSecondLemonade] = useState(0);
@@ -58,14 +57,17 @@ const Pickup = ({
     setOrder(true);
   };
 
+  const styleClasses = (style1: string, style2: string) => {
+    return onchange ? classes[style1] + " " + classes[style2] : classes[style1];
+  };
+
   return (
     <div className={classes.container}>
       <div
-        className={
-          onchange
-            ? `${classes.containerInformationAnimation} ${classes.containerInformation}`
-            : classes.containerInformation
-        }
+        className={styleClasses(
+          "containerInformation",
+          "containerInformationAnimation"
+        )}
       >
         <div className={classes.information}>
           <h4>{data.information.product}</h4>
@@ -112,13 +114,7 @@ const Pickup = ({
           <span>${data.products[1].price}</span>
         </div>
       </div>
-      <div
-        className={
-          onchange
-            ? `${classes.containerFormAnimation} ${classes.containerForm}`
-            : classes.containerForm
-        }
-      >
+      <div className={styleClasses("containerForm", "containerFormAnimation")}>
         <h4>{data.Order.summary}</h4>
         <form onSubmit={onSubmit}>
           <label>{data.Order.location}</label>

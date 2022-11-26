@@ -9,7 +9,11 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Navbar onChangePage={newPage} onChangeLaguage={setLanguage} language={language}/>
+      <Navbar
+        onChangePage={newPage}
+        onChangeLaguage={setLanguage}
+        language={language}
+      />
       <Component onChange={page} language={language} {...pageProps} />
     </>
   );
