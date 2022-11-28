@@ -121,7 +121,7 @@
 .containerForm form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 .containerForm h4 {
   font-size: 1.7rem;

@@ -27,6 +27,9 @@
   top: 0.9rem;
   right: 0rem;
 }
+.logo {
+  display: none;
+}
 .links {
   width: 60vw;
   height: 100vh;
@@ -101,6 +104,10 @@
       transform: translateY(-5rem);
       opacity: 0;
     }
+    50% {
+      transform: translateY(-5rem);
+      opacity: 0;
+    }
     100% {
       transform: translateY(0rem);
       opacity: 1;
@@ -108,6 +115,39 @@
   }
   .icon {
     display: none;
+  }
+  .logo {
+    display: block;
+    width: 19.1rem;
+  }
+  .logo h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    animation: 1s forwards logoAnimation;
+  }
+  @keyframes logoAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(-5rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .logoAnimation {
+    animation: .4s forwards logoReverseAnimation;
+  }
+  @keyframes logoReverseAnimation {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-4em);
+    }
   }
   .links {
     background-color: transparent;
@@ -117,14 +157,14 @@
     height: auto;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     position: absolute;
   }
   .links ul {
     display: flex;
     gap: 6rem;
     justify-content: center;
-    margin: 3rem 0 3rem 20%;
-    width: 80%;
+    margin: 3rem 0;
   }
   .links ul li {
     margin-top: 0;
@@ -137,8 +177,6 @@
     font-size: 1.5rem;
   }
   .links div:last-child {
-    width: 20%;
-    margin: 0 10% 0 0;
     gap: 2rem;
   }
   .links ul li a:hover {

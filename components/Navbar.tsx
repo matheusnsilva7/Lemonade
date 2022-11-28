@@ -20,9 +20,10 @@ interface data {
 
 const NavBar = ({ onChangePage, onChangeLaguage, language }: NavConfig) => {
   const [mobileNav, setMobileNav] = useState(false);
+  const [page, setPage] = useState("");
   const router = useRouter();
   const data: data = Data[language === "ENG" ? "ENG" : "POR"];
-
+  
   return (
     <nav className={Classes.nav}>
       <button
@@ -48,12 +49,22 @@ const NavBar = ({ onChangePage, onChangeLaguage, language }: NavConfig) => {
             <path d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z" />
           </svg>
         </div>
+        <div
+          className={
+            page === "/"
+              ? `${Classes.logo} ${Classes.logoAnimation}`
+              : Classes.logo
+          }
+        >
+          {router.asPath.replace("/", "") !== "" && <h1>The Lemonade Stand</h1>}
+        </div>
         <ul>
           {data.nav.map(
             (link: { id: number; name: string; href: string }, i: number) => {
               const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
                 e.preventDefault();
                 onChangePage(true);
+                setPage(link.href);
                 setMobileNav(false);
                 link.href.replace("/", "") !== router.asPath.replace("/", "")
                   ? setTimeout(() => {

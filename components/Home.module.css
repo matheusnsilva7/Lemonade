@@ -9,7 +9,6 @@
   background: url(../img/background.jpg) no-repeat;
   animation: 1s normal backgroundAnimation;
   background-size: cover;
-  transition: 0.4 all;
 }
 @keyframes backgroundAnimation {
   0% {
@@ -85,8 +84,7 @@
   font-weight: 700;
   font-size: 1.3rem;
   animation: 1.2s normal buttonAnimation;
-  transition: 0.4s all;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.4s all; 
 }
 @keyframes buttonAnimation {
   0% {
