@@ -137,7 +137,7 @@
     }
   }
   .logoAnimation {
-    animation: .4s forwards logoReverseAnimation;
+    animation: .5s forwards logoReverseAnimation;
   }
   @keyframes logoReverseAnimation {
     0% {
@@ -180,17 +180,17 @@
     gap: 2rem;
   }
   .links ul li a:hover {
-    color: #ffff9e;
+    color: #ffff58;
   }
   .links button {
     border-bottom: 4px solid transparent;
   }
   .links button:hover {
-    color: #ffff9e;
-    border-bottom: 4px solid #ffff9e;
+    color: #ffff58;
+    border-bottom: 4px solid #ffff58;
   }
   .links .checked {
-    color: #ffff9e;
+    color: #ffff58;
     border-bottom: 4px solid transparent;
   }
   @media (min-width: 1440px) {

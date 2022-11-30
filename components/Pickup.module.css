@@ -186,7 +186,7 @@
   background-color: rgb(233, 233, 233);
   border-radius: 2rem;
   font-size: 3rem;
-  padding: 20rem;
+  padding: 6rem 3rem;
   animation: 1.5s forwards textAnimation;
 }
 @keyframes textAnimation {
@@ -261,5 +261,8 @@
   .container button {
     width: 20rem;
     height: 4rem;
+  }
+  .containerStore h4 {
+    padding: 20rem;
   }
 }

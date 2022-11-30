@@ -8,7 +8,7 @@ const Data = {
     ],
     home: {
       title: "The lemonade stand",
-      subTitle: "the most fresh and healthy lemonade stand",
+      subTitle: "The freshest and healthiest lemonade",
       firstBtn: "MENU",
       secondBtn: "STORES",
     },
@@ -63,7 +63,7 @@ const Data = {
     ],
     home: {
       title: "Barraca de Limonada",
-      subTitle: "a banca de limonada mais fresca e saudável",
+      subTitle: "A limonada mais fresca e saudável",
       firstBtn: "MENU",
       secondBtn: "LOJAS",
     },
