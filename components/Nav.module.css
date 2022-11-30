@@ -137,7 +137,7 @@
     }
   }
   .logoAnimation {
-    animation: .5s forwards logoReverseAnimation;
+    animation: .6s forwards logoReverseAnimation;
   }
   @keyframes logoReverseAnimation {
     0% {
