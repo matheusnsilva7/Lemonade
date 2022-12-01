@@ -49,7 +49,11 @@ const NavBar = ({ onChangePage, onChangeLaguage, language }: NavConfig) => {
             <path d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z" />
           </svg>
         </div>
-        <div className={`${Classes.logo} ${page ? Classes.logoAnimation : ""}`}>
+        <div
+          className={`${Classes.logo} ${
+            router.asPath.replace("/", "") !== "" ? Classes.logoAni : ""
+          } ${page ? Classes.logoAnimation : ""}`}
+        >
           {router.asPath.replace("/", "") !== "" && <h1>The Lemonade Stand</h1>}
         </div>
         <ul>
@@ -62,9 +66,9 @@ const NavBar = ({ onChangePage, onChangeLaguage, language }: NavConfig) => {
                 setMobileNav(false);
                 link.href.replace("/", "") !== router.asPath.replace("/", "")
                   ? setTimeout(() => {
+                      setPage(false);
                       onChangePage(false);
                       router.push(link.href);
-                      setPage(false);
                     }, 400)
                   : onChangePage(false);
               };
