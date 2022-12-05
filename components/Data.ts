@@ -35,12 +35,12 @@ const Data = {
       products: [
         {
           name: "Cheap lemonade",
-          price: "$0.50",
+          price: "0.50",
           err: "Only 10 drinks",
         },
         {
           name: "Fancy lemonade",
-          price: "$1.00",
+          price: "1.00",
           err: "Only 10 drinks",
         },
       ],
@@ -90,12 +90,12 @@ const Data = {
       products: [
         {
           name: "Limonada barata",
-          price: "$0.50",
+          price: "0.50",
           err: "Apenas 10 bebidas",
         },
         {
           name: "Limonada chique",
-          price: "$1.00",
+          price: "1.00",
           err: "Apenas 10 bebidas",
         },
       ],
