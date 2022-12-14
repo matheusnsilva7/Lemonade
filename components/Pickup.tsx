@@ -24,24 +24,13 @@ const Pickup = ({ onchange, language }: props) => {
   });
 
   useEffect(() => {
-    setErr({
-      firstDrink: false,
-      secondDrink: false,
-      price: false,
-      location: false,
+    setErr((prev) => {
+      return { ...prev, price: false, location: false };
     });
-  }, [selectChange, firstLemonade, secondLemonade]);
+  }, [selectChange]);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    firstLemonade > 5 &&
-      setErr((prev) => {
-        return { ...prev, firstDrink: true };
-      });
-    secondLemonade > 10 &&
-      setErr((prev) => {
-        return { ...prev, secondDrink: true };
-      });
     if (!selectChange) {
       setErr((prev) => {
         return { ...prev, location: true };
@@ -54,6 +43,7 @@ const Pickup = ({ onchange, language }: props) => {
       });
       return;
     }
+    if (err.firstDrink || err.secondDrink) return;
     setOrder(true);
   };
 
@@ -87,7 +77,18 @@ const Pickup = ({ onchange, language }: props) => {
             max="10"
             value={firstLemonade * 2}
             className={err.firstDrink ? classes.selectErr : ""}
-            onChange={(e) => setFirstLemonade(+e.target.value * 0.5)}
+            onChange={(e) => {
+              setFirstLemonade(+e.target.value * 0.5);
+              setErr((prev) => {
+                return { ...prev, firstDrink: false };
+              });
+            }}
+            onBlur={() =>
+              firstLemonade > 5 &&
+              setErr((prev) => {
+                return { ...prev, firstDrink: true };
+              })
+            }
           />
           {err.firstDrink && (
             <h5 className={classes.textErr}>{data.products[0].err}</h5>
@@ -106,7 +107,18 @@ const Pickup = ({ onchange, language }: props) => {
             max="10"
             value={secondLemonade}
             className={err.secondDrink ? classes.selectErr : ""}
-            onChange={(e) => setSecondLemonade(+e.target.value)}
+            onChange={(e) => {
+              setSecondLemonade(+e.target.value);
+              setErr((prev) => {
+                return { ...prev, secondDrink: false };
+              });
+            }}
+            onBlur={() =>
+              secondLemonade > 10 &&
+              setErr((prev) => {
+                return { ...prev, secondDrink: true };
+              })
+            }
           />
           {err.secondDrink && (
             <h5 className={classes.textErr}>{data.products[1].err}</h5>
