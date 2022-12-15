@@ -80,7 +80,7 @@ const Pickup = ({ onchange, language }: props) => {
             onChange={(e) => {
               setFirstLemonade(+e.target.value * 0.5);
               setErr((prev) => {
-                return { ...prev, firstDrink: false };
+                return { ...prev, firstDrink: false, price: false };
               });
             }}
             onBlur={() =>
@@ -110,7 +110,7 @@ const Pickup = ({ onchange, language }: props) => {
             onChange={(e) => {
               setSecondLemonade(+e.target.value);
               setErr((prev) => {
-                return { ...prev, secondDrink: false };
+                return { ...prev, secondDrink: false, price: false };
               });
             }}
             onBlur={() =>
