@@ -108,6 +108,9 @@
       transform: translateY(-5rem);
       opacity: 0;
     }
+    60%{
+      opacity: 1;
+    }
     100% {
       transform: translateY(0rem);
       opacity: 1;
@@ -139,7 +142,7 @@
     }
   }
   .logoAnimation {
-    animation: 0.6s forwards logoReverseAnimation;
+    animation: 0.4s forwards logoReverseAnimation;
   }
   @keyframes logoReverseAnimation {
     0% {
@@ -180,6 +183,9 @@
   }
   .links div:last-child {
     gap: 2rem;
+  }
+  .links ul li a{
+    color: #008000;
   }
   .links ul li a:hover {
     color: #ffff58;

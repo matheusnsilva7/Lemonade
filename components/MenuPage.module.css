@@ -16,10 +16,13 @@
 }
 .containerProductsInformation {
   animation: 1.3s normal productAnimation;
-  transition: 0.4s all;
 }
 @keyframes productAnimation {
   0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+  20% {
     opacity: 0;
     transform: translateX(-5rem);
   }
@@ -29,17 +32,31 @@
   }
 }
 .productAnimation {
-  opacity: 0;
-  transform: translateX(-5rem);
+  animation: .5s forwards productAnimationReverse;
+}
+@keyframes productAnimationReverse {
+  0% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-5rem);
+    background-color: white;
+  }
 }
 .containerImg {
   display: flex;
   flex-direction: column;
-  animation: 1s normal productImgAnimation;
+  animation: 1.3s normal productImgAnimation;
   transition: 0.4s all;
 }
 @keyframes productImgAnimation {
   0% {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+  20% {
     opacity: 0;
     transform: translateX(5rem);
   }
@@ -49,8 +66,17 @@
   }
 }
 .productImgAnimation {
-  opacity: 0;
-  transform: translateX(5rem);
+  animation: .5s forwards productImgAnimationReverse;
+}
+@keyframes productImgAnimationReverse {
+  0% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
 }
 .containerProducts h4 {
   font-size: 2rem;

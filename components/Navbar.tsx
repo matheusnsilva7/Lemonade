@@ -66,9 +66,9 @@ const NavBar = ({ onChangePage, onChangeLaguage, language }: NavConfig) => {
                 setMobileNav(false);
                 link.href.replace("/", "") !== router.asPath.replace("/", "")
                   ? setTimeout(() => {
+                      router.push(link.href);
                       setPage(false);
                       onChangePage(false);
-                      router.push(link.href);
                     }, 400)
                   : onChangePage(false);
               };
@@ -76,7 +76,7 @@ const NavBar = ({ onChangePage, onChangeLaguage, language }: NavConfig) => {
                 <li key={link.id + i}>
                   <Link
                     className={
-                      link.href === router.asPath.replace("/", "")
+                      link.href.replace("/", "") === router.asPath.replace("/", "")
                         ? Classes.checked
                         : ""
                     }
