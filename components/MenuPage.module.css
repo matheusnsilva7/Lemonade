@@ -22,7 +22,7 @@
     opacity: 0;
     transform: translateX(-5rem);
   }
-  20% {
+  10% {
     opacity: 0;
     transform: translateX(-5rem);
   }
@@ -56,7 +56,7 @@
     opacity: 0;
     transform: translateX(5rem);
   }
-  20% {
+  10% {
     opacity: 0;
     transform: translateX(5rem);
   }

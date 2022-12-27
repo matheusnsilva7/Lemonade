@@ -13,12 +13,13 @@
 .pageMap {
   animation: 1s forwards mapAnimation;
   transition: 0.4s all;
+
 }
 @keyframes mapAnimation {
   0% {
     opacity: 0;
   }
-  20% {
+  10% {
     opacity: 0;
   }
   100% {
@@ -41,7 +42,9 @@
 }
 @media (min-width: 1000px) {
   .map {
-    margin-top: 15vh;
     height: 85vh;
+  }
+  .pageMap{
+    padding-top: 10.5rem;
   }
 }
