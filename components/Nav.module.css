@@ -121,7 +121,7 @@
   }
   .logo {
     display: block;
-    width: 19.1rem;
+    width: 21.8rem;
   }
   .logo h1 {
     font-weight: 700;
@@ -188,17 +188,17 @@
     color: #008000;
   }
   .links ul li a:hover {
-    color: #ffff58;
+    color: #ffcc00;;
   }
   .links button {
     border-bottom: 4px solid transparent;
   }
   .links button:hover {
-    color: #ffff58;
-    border-bottom: 4px solid #ffff58;
+    color: #ffcc00;;
+    border-bottom: 4px solid #ffcc00;;
   }
   .links .checked {
-    color: #ffff58;
+    color: #ffcc00;
     border-bottom: 4px solid transparent;
   }
   @media (min-width: 1440px) {
