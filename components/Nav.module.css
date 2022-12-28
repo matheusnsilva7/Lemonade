@@ -35,7 +35,7 @@
   height: 100vh;
   background-color: #ffff9e;
   position: fixed;
-  right: -65vw;
+  right: -60vw;
   transition: 1s all;
   z-index: 10;
 }

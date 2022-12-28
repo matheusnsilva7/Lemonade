@@ -9,14 +9,15 @@
   background: url(../img/background.jpg) no-repeat;
   animation: 1s normal backgroundAnimation;
   background-size: cover;
+  overflow: hidden;
 }
-.container::before{
+.container::before {
   content: "";
   height: 100vh;
   width: 100vw;
-  position:absolute;
-  top:0;
-  left:0;
+  position: absolute;
+  top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.3);
 }
 @keyframes backgroundAnimation {
@@ -31,7 +32,7 @@
   }
 }
 .backgroundAnimation {
-  animation: .5s forwards backgroundReverseAnimation;
+  animation: 0.5s forwards backgroundReverseAnimation;
 }
 @keyframes backgroundReverseAnimation {
   0% {
@@ -39,7 +40,7 @@
   }
   100% {
     opacity: 0;
-    background-color: #FFF;
+    background-color: #fff;
   }
 }
 .container div {
@@ -49,7 +50,7 @@
   z-index: 2;
 }
 .container h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   text-align: center;
   font-weight: 600;
   animation: 1.2s normal titleAnimation;
@@ -75,7 +76,7 @@
   transform: translateX(5rem);
 }
 .container p {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   text-align: center;
   font-weight: 600;
   animation: 1.2s normal subTitleAnimation;
@@ -108,7 +109,7 @@
   font-weight: 700;
   font-size: 1.3rem;
   animation: 1.2s normal buttonAnimation;
-  transition: 0.4s all; 
+  transition: 0.4s all;
 }
 @keyframes buttonAnimation {
   0% {
@@ -132,6 +133,18 @@
   background-color: #3c7404;
 }
 @media (min-width: 700px) {
+  .container div {
+    gap: 10rem;
+  }
+  .container h1 {
+    font-size: 5rem;
+  }
+  .container p {
+    font-size: 1.7rem;
+    width: 60rem;
+  }
+}
+@media (min-width: 1000px) {
   .container div {
     gap: 10rem;
   }
