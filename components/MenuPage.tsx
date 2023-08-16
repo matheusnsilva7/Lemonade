@@ -3,33 +3,22 @@ import data from "./Data";
 import Image from "next/image";
 
 import classes from "./MenuPage.module.css";
-import lemonade from "../img/lemonade.png";
 
 interface prop {
   onchange: boolean;
   language: string;
 }
 interface dataInformation {
-  firstProduct: {
-    title: string;
-    paragraph: string;
-    price: string;
-  };
-  secondProduct: {
-    title: string;
-    paragraph: string;
-    price: string;
-  };
-}
-interface prop {
-  onchange: boolean;
-  language: string;
+  3: { title: string; paragraph: string; price: string };
+  2: { title: string; paragraph: string; price: string };
+  1: { title: string; paragraph: string; price: string };
 }
 
 const Menu = ({ onchange, language }: prop) => {
   const [product, setProduct] = useState(2);
   const changeProduct = useRef<HTMLDivElement | null>(null);
-  const Data: dataInformation = data[language === "ENG" ? "ENG" : "POR"].Menu;
+  const Data: dataInformation | any =
+    data[language === "ENG" ? "ENG" : "POR"].Menu;
 
   const clickHandler = (boolean: number) => {
     product !== boolean &&

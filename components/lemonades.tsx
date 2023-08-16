@@ -5,16 +5,11 @@ interface props {
   err: any;
   firstLemonade: number;
   secondLemonade: number;
-  setFirstLemonade: (value: number) => void;
-  setSecondLemonade: (value: number) => void;
-  setErr: Dispatch<
-    SetStateAction<{
-      firstDrink: boolean;
-      secondDrink: boolean;
-      price: boolean;
-      location: boolean;
-    }>
-  >;
+  thirdLemonade: number;
+  setFirstLemonade: (value: any) => void;
+  setSecondLemonade: (value: any) => void;
+  setErr: (value: any) => void;
+  setThirdLemonade: (value: any) => void;
 }
 
 const Lemeonades = ({
@@ -100,7 +95,7 @@ const Lemeonades = ({
           <span
             className={`material-symbols-outlined ${classes.btnNumber}`}
             onClick={() => {
-              setThirdLemonade((e: number) => (e >= 10 ? e : (e += 1)));
+              setThirdLemonade((e:number) => (e >= 10 ? e : (e += 1)));
             }}
           >
             arrow_forward_ios
