@@ -12,9 +12,7 @@ interface props {
 }
 interface dataInformation {
   title: string;
-  subTitle: string;
   firstBtn: string;
-  secondBtn: string;
 }
 
 const Home = ({ onchange, language }: props) => {
