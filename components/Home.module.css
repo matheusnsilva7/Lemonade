@@ -45,7 +45,7 @@
   font-size: 6rem;
   text-align: center;
   font-weight: 600;
-  animation: 1.2s normal titleAnimation;
+  animation: 1s normal titleAnimation;
   transition: 0.4s all;
   z-index: 2;
   color: #ffef54;
@@ -75,7 +75,7 @@
   font-weight: 700;
   border: 1px solid black;
   font-size: 1.3rem;
-  animation: 1.2s normal buttonAnimation;
+  animation: 1s normal buttonAnimation;
   transition: 0.4s all;
 }
 .img {
@@ -83,7 +83,7 @@
   right: -5rem;
   bottom: 1rem;
   transform: rotate(42deg);
-  animation: 1.8s normal lemonAnimation;
+  animation: 1.3s normal lemonAnimation;
   opacity: 0.9;
   transition: 0.4s;
 }
@@ -97,7 +97,7 @@
   left: -4rem;
   top: 1rem;
   transform: rotate(-125deg);
-  animation: 1.8s normal lemonSecondAnimation;
+  animation: 1.3s normal lemonSecondAnimation;
   opacity: 0.9;
   transition: 0.4s;
 }
