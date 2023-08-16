@@ -45,7 +45,7 @@
   font-size: 6rem;
   text-align: center;
   font-weight: 600;
-  animation: 2s normal titleAnimation;
+  animation: 1.2s normal titleAnimation;
   transition: 0.4s all;
   z-index: 2;
   color: #ffef54;
