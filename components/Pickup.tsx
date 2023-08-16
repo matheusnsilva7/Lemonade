@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import LoadingIndicator from "./LoadingIndicator";
+import Lemeonades from "./lemonades";
 import Data from "./Data";
 
 import classes from "./Pickup.module.css";
-import lemonade from "../img/lemonade.png";
 
 interface props {
   onchange: boolean;
@@ -14,6 +14,7 @@ const Pickup = ({ onchange, language }: props) => {
   const [order, setOrder] = useState(false);
   const [firstLemonade, setFirstLemonade] = useState(0);
   const [secondLemonade, setSecondLemonade] = useState(0);
+  const [thirdLemonade, setThirdLemonade] = useState(0);
   const [selectChange, setSelectChange] = useState("");
   const data = Data[language === "ENG" ? "ENG" : "POR"].Pickup;
   const [err, setErr] = useState({
@@ -27,7 +28,7 @@ const Pickup = ({ onchange, language }: props) => {
     setErr((prev) => {
       return { ...prev, price: false, location: false };
     });
-  }, [selectChange]);
+  }, [selectChange, firstLemonade, secondLemonade, thirdLemonade]);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +38,7 @@ const Pickup = ({ onchange, language }: props) => {
       });
       return;
     }
-    if (firstLemonade + secondLemonade === 0) {
+    if (firstLemonade + secondLemonade + thirdLemonade === 0) {
       setErr((prev) => {
         return { ...prev, price: true };
       });
@@ -60,74 +61,24 @@ const Pickup = ({ onchange, language }: props) => {
         )}
       >
         <div className={classes.information}>
-          <h4>{data.information.product}</h4>
-          <h4>{data.information.quantity}</h4>
-          <h4>{data.information.price}</h4>
+          <h4>{data.information}</h4>
         </div>
-        <hr />
-        <div className={classes.Product}>
-          <h5>{data.products[0].name}</h5>
-          <div className={`${classes.img} ${classes.backgroundGreen}`}>
-            <img src={lemonade.src} className={classes.img} alt="lemonade" />
-          </div>
-          <input
-            type="number"
-            name="name"
-            min="0"
-            max="10"
-            value={firstLemonade * 2}
-            className={err.firstDrink ? classes.selectErr : ""}
-            onChange={(e) => {
-              setFirstLemonade(+e.target.value * 0.5);
-              setErr((prev) => {
-                return { ...prev, firstDrink: false, price: false };
-              });
-            }}
-            onBlur={() =>
-              firstLemonade > 5 &&
-              setErr((prev) => {
-                return { ...prev, firstDrink: true };
-              })
-            }
-          />
-          {err.firstDrink && (
-            <h5 className={classes.textErr}>{data.products[0].err}</h5>
-          )}
-          <span>${data.products[0].price}</span>
-        </div>
-        <div className={classes.Product}>
-          <h5>{data.products[1].name}</h5>
-          <div className={`${classes.img} ${classes.backgroundBlue}`}>
-            <img src={lemonade.src} className={classes.img} alt="lemonade" />
-          </div>
-          <input
-            type="number"
-            name="name"
-            min="0"
-            max="10"
-            value={secondLemonade}
-            className={err.secondDrink ? classes.selectErr : ""}
-            onChange={(e) => {
-              setSecondLemonade(+e.target.value);
-              setErr((prev) => {
-                return { ...prev, secondDrink: false, price: false };
-              });
-            }}
-            onBlur={() =>
-              secondLemonade > 10 &&
-              setErr((prev) => {
-                return { ...prev, secondDrink: true };
-              })
-            }
-          />
-          {err.secondDrink && (
-            <h5 className={classes.textErr}>{data.products[1].err}</h5>
-          )}
-          <span>${data.products[1].price}</span>
-        </div>
+        <hr className={classes.hr} />
+        <Lemeonades
+          data={data}
+          firstLemonade={firstLemonade}
+          err={err}
+          setFirstLemonade={setFirstLemonade}
+          setErr={setErr}
+          secondLemonade={secondLemonade}
+          setSecondLemonade={setSecondLemonade}
+          setThirdLemonade={setThirdLemonade}
+          thirdLemonade={thirdLemonade}
+        />
       </div>
       <div className={styleClasses("containerForm", "containerFormAnimation")}>
         <h4>{data.Order.summary}</h4>
+        <hr className={classes.hr} />
         <form onSubmit={onSubmit}>
           <label>{data.Order.location}</label>
           <select
@@ -141,7 +92,7 @@ const Pickup = ({ onchange, language }: props) => {
           </select>
           <h5>{data.Order.cost}</h5>
           <span className={err.price ? classes.colorErr : ""}>
-            ${firstLemonade + secondLemonade}
+            ${firstLemonade * 0.5 + secondLemonade * 1.5 + thirdLemonade * 2}
           </span>
           <button>{data.Order.btn}</button>
         </form>

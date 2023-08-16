@@ -33,7 +33,7 @@
   }
 }
 .productAnimation {
-  animation: .5s forwards productAnimationReverse;
+  animation: 0.5s forwards productAnimationReverse;
 }
 @keyframes productAnimationReverse {
   0% {
@@ -43,14 +43,15 @@
   100% {
     opacity: 0;
     transform: translateX(-5rem);
-    background-color: white;
   }
 }
 .containerImg {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 26rem;
   animation: 1.3s normal productImgAnimation;
   transition: 0.4s all;
+  gap: 2rem;
 }
 @keyframes productImgAnimation {
   0% {
@@ -67,7 +68,7 @@
   }
 }
 .productImgAnimation {
-  animation: .5s forwards productImgAnimationReverse;
+  animation: 0.5s forwards productImgAnimationReverse;
 }
 @keyframes productImgAnimationReverse {
   0% {
@@ -94,44 +95,54 @@
   animation: 0s;
 }
 .product {
-  width: 20rem;
-  height: 20rem;
+  width: 8rem;
+  height: 8rem;
   border-radius: 50%;
   margin: 0 auto;
+  grid-column: span 3;
 }
 .containerProduct {
   display: flex;
 }
 .secondProduct {
-  width: 8rem;
-  height: 8rem;
-  border-radius: 50%;
-  background-color: aqua;
-  margin-left: 4rem;
+  background-color: #00ffff33;
+  display: grid;
+  place-content: center;
+  width: 6rem;
+  margin: auto 0;
+  height: 8.5rem;
+  border-radius: 2rem;
+  border: 1px solid black;
   cursor: pointer;
   transition: all 1.5s;
   transform: translate(0px, 0px) scale(1);
 }
 .secondAnimation {
-  transform: translate(-6rem, -14rem) scale(2.5);
+  transform: translate(8rem, -19rem) scale(3);
+}
+.thirdAnimation {
+  transform: translate(-8rem, -19rem) scale(3);
 }
 .firstProduct {
-  width: 8rem;
+  display: grid;
+  place-content: center;
+  width: 6rem;
   margin: auto 0;
-  height: 8rem;
-  border-radius: 50%;
-  background-color: rgb(0, 255, 13);
+  height: 8.5rem;
+  border-radius: 2rem;
+  border: 1px solid black;
+  background-color: rgba(0, 255, 13, 0.3);
   cursor: pointer;
   transition: all 1.5s;
   transform: translate(0px, 0px) scale(1);
 }
 .firstanimation {
-  transform: translate(6rem, -14rem) scale(2.5);
+  transform: translate(0rem, -19rem) scale(3);
   z-index: 3;
 }
 .img {
-  margin: 1rem 0;
-  width: 8rem;
+  margin: 1rem auto 0;
+  width: 2rem;
   height: 6rem;
 }
 .containerProducts .change > * {
@@ -148,13 +159,20 @@
     opacity: 1;
   }
 }
-@media (min-width: 700px) {
+.text {
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 200;
+}
+@media (min-width: 900px) {
   .containerProducts {
     flex-direction: row;
   }
   .containerImg {
     width: 57rem;
-    margin-top: 15rem;
+    margin-top: 3rem;
+    grid-template-columns: 1fr 13rem;
+    grid-template-rows: repeat(2, 12rem);
   }
   .containerProducts h4 {
     font-size: 2.5rem;
@@ -168,32 +186,36 @@
     font-size: 2.5rem;
   }
   .product {
-    width: 30rem;
-    height: 30rem;
-  }
-  .containerImg {
-    align-items: center;
+    grid-column: auto;
+    grid-row: span 3;
   }
   .secondProduct {
     width: 10rem;
-    height: 10rem;
+    height: 11.5rem;
     margin: 3rem;
   }
   .firstProduct {
     width: 10rem;
     margin: 3rem;
-    height: 10rem;
+    height: 11.5rem;
   }
   .img {
-    margin: 1rem 0;
+    margin: 1rem 0 0;
     width: 10rem;
     height: 8rem;
+    object-fit: contain;
   }
   .firstanimation {
-    transform: translate(8rem, -23rem) scale(3);
+    transform: translate(-20rem, 0rem) scale(2.5);
+    z-index: 3;
   }
   .secondAnimation {
-    transform: translate(-8rem, -23rem) scale(3);
+    transform: translate(-20rem, 14rem) scale(2.5);
+    z-index: 3;
+  }
+  .thirdAnimation {
+    transform: translate(-20rem, -14rem) scale(2.5);
+    z-index: 3;
   }
 }
 @media (min-width: 1000px) {
@@ -205,9 +227,12 @@
     flex-direction: column;
   }
   .firstanimation {
-    transform: translate(-28.5rem, 8rem) scale(3);
+    transform: translate(-28.5rem, 0rem) scale(3);
   }
   .secondAnimation {
-    transform: translate(-28.2rem, -8rem) scale(3);
+    transform: translate(-28.5rem, 15rem) scale(3);
+  }
+  .thirdAnimation {
+    transform: translate(-28.5rem, -15rem) scale(2.5);
   }
 }

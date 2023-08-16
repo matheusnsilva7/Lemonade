@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import data from "./Data";
+import Image from "next/image";
 
 import classes from "./MenuPage.module.css";
 import lemonade from "../img/lemonade.png";
@@ -26,11 +27,11 @@ interface prop {
 }
 
 const Menu = ({ onchange, language }: prop) => {
-  const [product, setProduct] = useState(true);
+  const [product, setProduct] = useState(2);
   const changeProduct = useRef<HTMLDivElement | null>(null);
   const Data: dataInformation = data[language === "ENG" ? "ENG" : "POR"].Menu;
 
-  const clickHandler = (boolean: boolean) => {
+  const clickHandler = (boolean: number) => {
     product !== boolean &&
       changeProduct.current?.classList.remove(classes.change);
     setTimeout(() => {
@@ -39,78 +40,77 @@ const Menu = ({ onchange, language }: prop) => {
     }, 1);
   };
 
-  const styleClasses = (
-    boolean: boolean | null,
-    style1: string,
-    style2: string,
-    style3: string
-  ) => {
-    if (boolean === null) {
-      return onchange
-        ? classes[style1] + " " + classes[style2]
-        : classes[style1] + " " + classes[style3];
-    }
-    return product === boolean
-      ? classes[style1] + " " + classes[style2]
-      : classes[style1] + " " + classes[style3];
-  };
-
   return (
     <div className={classes.container}>
       <div className={classes.containerProducts}>
         <div
           ref={changeProduct}
-          className={styleClasses(
-            null,
-            "containerProductsInformation",
-            "productAnimation",
-            ""
-          )}
+          className={`
+            ${classes.containerProductsInformation} 
+            ${onchange && classes.productAnimation}
+          `}
         >
-          <h4>
-            {product ? Data.firstProduct.title : Data.secondProduct.title}
-          </h4>
-          <p>
-            {product
-              ? Data.firstProduct.paragraph
-              : Data.secondProduct.paragraph}
-          </p>
-          <span>
-            {product ? Data.firstProduct.price : Data.secondProduct.price}
-          </span>
+          <h4>{Data[product].title}</h4>
+          <p>{Data[product].paragraph}</p>
+          <span>{Data[product].price}</span>
         </div>
         <div
-          className={styleClasses(
-            null,
-            "containerImg",
-            "productImgAnimation",
-            ""
-          )}
+          className={` ${classes.containerImg} ${
+            onchange && classes.productImgAnimation
+          }
+          `}
         >
           <div className={classes.product}></div>
-          <div className={classes.containerProduct}>
-            <div
-              className={styleClasses(
-                true,
-                "firstProduct",
-                "firstanimation",
-                " "
-              )}
-              onClick={clickHandler.bind(null, true)}
-            >
-              <img src={lemonade.src} className={classes.img} alt="lemonade" />
-            </div>
-            <div
-              className={styleClasses(
-                false,
-                "secondProduct",
-                "secondAnimation",
-                "secondMoveBack"
-              )}
-              onClick={clickHandler.bind(null, false)}
-            >
-              <img src={lemonade.src} className={classes.img} alt="lemonade" />
-            </div>
+          <div
+            className={`
+              ${classes.secondProduct}
+              ${product === 1 && classes.secondAnimation}
+              ${onchange && classes.secondMoveBack}
+            `}
+            onClick={clickHandler.bind(null, 1)}
+          >
+            <Image
+              src="/lemonade2.png"
+              width={140}
+              height={400}
+              className={classes.img}
+              alt="lemonade"
+            />
+            <h5 className={classes.text}>Large</h5>
+          </div>
+          <div
+            className={`
+              ${classes.firstProduct}
+              ${product === 2 && classes.firstanimation}
+              `}
+            onClick={clickHandler.bind(null, 2)}
+          >
+            <Image
+              src="/lemonade2.png"
+              width={140}
+              height={400}
+              className={classes.img}
+              alt="lemonade"
+            />
+            <h5 className={classes.text}>Medium</h5>
+          </div>
+          <div
+            className={`
+              ${classes.secondProduct}
+              ${product === 3 && classes.thirdAnimation}
+              ${onchange && classes.secondMoveBack}
+            `}
+            style={{ background: "#ffff0050" }}
+            onClick={clickHandler.bind(null, 3)}
+          >
+            <Image
+              src="/lemonade2.png"
+              width={140}
+              height={400}
+              className={classes.img}
+              alt="lemonade"
+            />
+            <h5 className={classes.text}>Small</h5>
           </div>
         </div>
       </div>

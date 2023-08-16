@@ -54,7 +54,7 @@ const NavBar = ({ onChangePage, onChangeLaguage, language }: NavConfig) => {
             router.asPath.replace("/", "") !== "" ? Classes.logoAni : ""
           } ${page ? Classes.logoAnimation : ""}`}
         >
-          {router.asPath.replace("/", "") !== "" && <h1>The Lemonade Stand</h1>}
+          {router.asPath.replace("/", "") !== "" && <h1>Lemonade</h1>}
         </div>
         <ul>
           {data.nav.map(
@@ -76,7 +76,8 @@ const NavBar = ({ onChangePage, onChangeLaguage, language }: NavConfig) => {
                 <li key={link.id + i}>
                   <Link
                     className={
-                      link.href.replace("/", "") === router.asPath.replace("/", "")
+                      link.href.replace("/", "") ===
+                      router.asPath.replace("/", "")
                         ? Classes.checked
                         : ""
                     }

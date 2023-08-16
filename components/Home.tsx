@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import data from "./Data";
 import { useRouter } from "next/router";
 
@@ -22,13 +23,32 @@ const Home = ({ onchange, language }: props) => {
   const router = useRouter();
 
   const styleClasses = (style1: string, style2: string) => {
-    return onchange || changePage ? classes[style1] + " " + classes[style2] : classes[style1];
+    return onchange || changePage
+      ? classes[style1] + " " + classes[style2]
+      : classes[style1];
   };
 
   return (
     <div className={styleClasses("container", "backgroundAnimation")}>
-      <h1 className={onchange|| changePage ? classes.title : ""}>{Data.title}</h1>
-      <p className={onchange || changePage ? classes.subtitle : ""}>{Data.subTitle}</p>
+      <Image
+        className={styleClasses("img", "imgOut")}
+        src="/lemon.png"
+        width={250}
+        height={250}
+        priority={true}
+        alt="lemon"
+      />
+      <Image
+        className={styleClasses("imgSecond", "imgSecondOut")}
+        src="/lemon.png"
+        width={250}
+        height={250}
+        priority={true}
+        alt="lemon"
+      />
+      <h1 className={onchange || changePage ? classes.title : ""}>
+        {Data.title}
+      </h1>
       <div>
         <Link
           className={styleClasses("btn", "buttonAnimation")}
@@ -42,19 +62,6 @@ const Home = ({ onchange, language }: props) => {
           }}
         >
           {Data.firstBtn}
-        </Link>
-        <Link
-          className={styleClasses("btn", "buttonAnimation")}
-          href="stores"
-          onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-            e.preventDefault();
-            setChangePage(true);
-            setTimeout(() => {
-              router.push("stores");
-            }, 400);
-          }}
-        >
-          {Data.secondBtn}
         </Link>
       </div>
     </div>

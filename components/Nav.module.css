@@ -49,7 +49,7 @@
   top: 0;
   left: 0;
   background-color: rgba(83, 83, 83, 0.3);
-  z-index: 1;
+  z-index: 3;
 }
 .links div:first-child {
   position: absolute;
@@ -66,12 +66,9 @@
   margin-top: 3rem;
 }
 .links ul li a {
-  color: #4a9104;
   font-size: 2rem;
-  font-weight: 600;
-}
-.links ul li a:hover {
-  color: #455e14;
+  font-weight: 300;
+  color: black;
 }
 .links div:last-child {
   display: flex;
@@ -81,8 +78,8 @@
 .links button {
   background-color: transparent;
   border: none;
-  color: #4a9104;
-  font-weight: 800;
+  color: black;
+  font-weight: 400;
   font-size: 1.8rem;
   cursor: pointer;
   border-bottom: 4px solid transparent;
@@ -92,8 +89,7 @@
   border-bottom: 4px solid #455e14;
 }
 .links .checked {
-  color: #455e14;
-  border-bottom: 4px solid #ffff9e;
+  border-bottom: 2px solid black;
 }
 @media (min-width: 1000px) {
   .nav {
@@ -108,7 +104,7 @@
       transform: translateY(-5rem);
       opacity: 0;
     }
-    60%{
+    60% {
       opacity: 1;
     }
     100% {
@@ -127,6 +123,7 @@
     font-weight: 700;
     font-size: 2rem;
     text-align: center;
+    color: #ffef54;
   }
   .logoAni {
     animation: 1s forwards logoAnimation;
@@ -184,22 +181,17 @@
   .links div:last-child {
     gap: 2rem;
   }
-  .links ul li a{
-    color: #008000;
-  }
   .links ul li a:hover {
-    color: #ffcc00;;
+    border-bottom: 2px solid black;
   }
   .links button {
-    border-bottom: 4px solid transparent;
+    border-bottom: 2px solid transparent;
   }
   .links button:hover {
-    color: #ffcc00;;
-    border-bottom: 4px solid #ffcc00;;
+    border-bottom: 2px solid black;
   }
   .links .checked {
-    color: #ffcc00;
-    border-bottom: 4px solid transparent;
+    border-bottom: 2px solid black;
   }
   @media (min-width: 1440px) {
     .links {

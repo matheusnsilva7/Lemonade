@@ -7,41 +7,43 @@ const Data = {
       { id: 4, name: "Order pickup", href: "pickup" },
     ],
     home: {
-      title: "The lemonade stand",
-      subTitle: "The freshest and healthiest lemonade",
-      firstBtn: "MENU",
-      secondBtn: "STORES",
+      title: "Lemonade",
+      firstBtn: "Click to slide",
     },
     Menu: {
-      firstProduct: {
-        title: "Cheap lemonade",
+      3: {
+        title: "Small Lemonade",
         paragraph:
-          "Lemon has caffeine, limonene, vitamin C and pectin, which speed up your metabolism and decrease the absorption of fats in the body.",
+          "A burst of refreshment in a compact size. Made with freshly squeezed lemons, pure cane sugar, and the right water balance, it's perfect for quick pick-me-ups.",
         price: "$0.50",
       },
-      secondProduct: {
-        title: "Fancy lemonade",
+      2: {
+        title: "Medium Lemonade",
         paragraph:
-          "Lemon has caffeine, limonene, vitamin C and pectin, which speed up your metabolism and decrease the absorption of fats in the body.",
-        price: "$1.00",
+          "Balanced blend of sun-ripened lemons, natural sugars, and precise water mix. Ideal for warm afternoons, offering a harmonious taste. Enjoyable without being overwhelming—a perfect companion for relaxed moments.",
+        price: "$1.50",
+      },
+      1: {
+        title: "Large Lemonade",
+        paragraph:
+          "Ultimate refreshment with generous flavor. Ripe lemon essence, natural sweetness, and perfect water consistency. Ideal for extended enjoyment, whether by the pool, at a picnic, or when thirst calls for a satisfying sip of summer.",
+        price: "$2.00",
       },
     },
     Pickup: {
-      information: {
-        product: "Product",
-        quantity: "Quantity",
-        price: "Price",
-      },
+      information: "Shopping card",
       products: [
         {
-          name: "Cheap lemonade",
+          name: "Small Lemonade",
           price: "0.50",
-          err: "Only 10 drinks",
         },
         {
-          name: "Fancy lemonade",
-          price: "1.00",
-          err: "Only 10 drinks",
+          name: "Medium Lemonade",
+          price: "1.50",
+        },
+        {
+          name: "Large Lemonade",
+          price: "2.00",
         },
       ],
       Order: {
@@ -62,41 +64,43 @@ const Data = {
       { id: 4, name: "Pedido para retirar", href: "pickup" },
     ],
     home: {
-      title: "Barraca de Limonada",
-      subTitle: "A limonada mais fresca e saudável",
-      firstBtn: "MENU",
-      secondBtn: "LOJAS",
+      title: "Limonada",
+      firstBtn: "Menu",
     },
     Menu: {
-      firstProduct: {
-        title: "Limonada barata",
+      3: {
+        title: "Limonada Pequena",
         paragraph:
-          "O limão possui cafeína, limoneno, vitamina C e pectina, que aceleram o seu metabolismo e diminuem a absorção de gorduras no corpo.",
+          "Uma explosão refrescante em tamanho compacto. Feita com limões frescos, açúcar puro e a dose certa de água. Ideal para uma sede rápida, com sabor tangy revigorante.",
         price: "$0.50",
       },
-      secondProduct: {
-        title: "Limonada chique",
+      2: {
+        title: "Limonada Média",
         paragraph:
-          "O limão possui cafeína, limoneno, vitamina C e pectina, que aceleram o seu metabolismo e diminuem a absorção de gorduras no corpo.",
-        price: "$1.00",
+          "Equilíbrio perfeito de limões maduros, açúcares naturais e água na medida certa. Ótima para tardes quentes, proporcionando um sabor harmonioso. Tamanho ideal para momentos relaxantes.",
+        price: "$1.50",
+      },
+      1: {
+        title: "Limonada Grande",
+        paragraph:
+          "O ápice da refrescância em uma porção generosa. Essência de limão verdadeiro, doçura na medida e a consistência perfeita de água. Ideal para momentos prolongados, seja em um piquenique ou no calor do verão.",
+        price: "$2.00",
       },
     },
     Pickup: {
-      information: {
-        product: "Produto",
-        quantity: "Quantidade",
-        price: "Preço",
-      },
+      information:"Carrinho de compras",
       products: [
         {
-          name: "Limonada barata",
+          name: "Limonada Pequena",
           price: "0.50",
-          err: "Apenas 10 bebidas",
         },
         {
-          name: "Limonada chique",
-          price: "1.00",
-          err: "Apenas 10 bebidas",
+          name: "Limonada Média",
+          price: "1.50",
+        },
+        {
+          name: "Limonada Grande",
+          price: "2.00",
         },
       ],
       Order: {

@@ -7,14 +7,13 @@
   transition: 0.4s all;
   overflow: hidden;
 }
-.icon{
+.icon {
   margin: -0.5rem 0 0 -0.5rem;
-  fill:rgb(0, 114, 0);
+  fill: rgb(0, 114, 0);
 }
 .pageMap {
   animation: 1s forwards mapAnimation;
   transition: 0.4s all;
-
 }
 @keyframes mapAnimation {
   0% {
@@ -45,7 +44,7 @@
   .map {
     height: 85vh;
   }
-  .pageMap{
+  .pageMap {
     padding-top: 10.5rem;
   }
 }
