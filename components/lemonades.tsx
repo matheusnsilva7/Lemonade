@@ -30,7 +30,7 @@ const Lemeonades = ({
         <div className={`${classes.img} ${classes.backgroundYellow}`}>
           <img src="/lemonade2.png" className={classes.img} alt="lemonade" />
         </div>
-        <div>
+        <div className={classes.numberContainer}>
           <span
             className={`material-symbols-outlined ${classes.btnNumber}`}
             onClick={() => {
@@ -56,7 +56,7 @@ const Lemeonades = ({
         <div className={`${classes.img} ${classes.backgroundGreen}`}>
           <img src="/lemonade2.png" className={classes.img} alt="lemonade" />
         </div>
-        <div>
+        <div className={classes.numberContainer}>
           <span
             className={`material-symbols-outlined ${classes.btnNumber}`}
             onClick={() => {
@@ -82,7 +82,7 @@ const Lemeonades = ({
         <div className={`${classes.img} ${classes.backgroundBlue}`}>
           <img src="/lemonade2.png" className={classes.img} alt="lemonade" />
         </div>
-        <div>
+        <div className={classes.numberContainer}>
           <span
             className={`material-symbols-outlined ${classes.btnNumber}`}
             onClick={() => {
@@ -95,7 +95,7 @@ const Lemeonades = ({
           <span
             className={`material-symbols-outlined ${classes.btnNumber}`}
             onClick={() => {
-              setThirdLemonade((e:number) => (e >= 10 ? e : (e += 1)));
+              setThirdLemonade((e: number) => (e >= 10 ? e : (e += 1)));
             }}
           >
             arrow_forward_ios

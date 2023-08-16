@@ -207,6 +207,15 @@
 .btnNumber {
   cursor: pointer;
 }
+.numberContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.numberContainer span {
+  padding: 0;
+  margin: 0 auto;
+}
 @keyframes textAnimation {
   0% {
     opacity: 0;
@@ -263,7 +272,6 @@
   }
   .Product span {
     font-size: 1.5rem;
-    padding: 0 0 0 3rem;
   }
   .containerForm span {
     font-size: 2rem;
