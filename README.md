@@ -26,7 +26,7 @@ Lemonade Stand Store is a delightful web application that allows customers to ex
 
 ## Demo
 
-Check out the live demo of the Lemonade Stand Store: [https://lemonade-stand.netlify.app](https://lemonade-stand.netlify.app)
+Check out the live demo of the Lemonade Stand Store: [https://lemonadestand-matheusnsilva7.netlify.app/](https://lemonadestand-matheusnsilva7.netlify.app/)
 
 ## Installation
 
@@ -51,6 +51,10 @@ Contributions are welcome! If you'd like to contribute to the project, follow th
 4. Push to the branch: `git push origin feature/add-new-feature`
 5. Create a pull request explaining your changes.
 
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
 ## Contact
 
-For questions or suggestions, feel free to contact me.
+For questions, suggestions, or collaboration opportunities, feel free to contact me.
