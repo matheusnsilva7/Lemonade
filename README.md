@@ -51,13 +51,6 @@ Contributions are welcome! If you'd like to contribute to the project, follow th
 4. Push to the branch: `git push origin feature/add-new-feature`
 5. Create a pull request explaining your changes.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ## Contact
 
-For questions or suggestions, feel free to contact the project maintainers:
-
-- Email: your@email.com
-- GitHub: [YourUsername](https://github.com/your-username)
+For questions or suggestions, feel free to contact me.
