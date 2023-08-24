@@ -7,9 +7,6 @@ Welcome to the Lemonade Stand Store project, a web application that offers a ref
 - [Introduction](#introduction)
 - [Features](#features)
 - [Demo](#demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
@@ -27,29 +24,6 @@ Lemonade Stand Store is a delightful web application that allows customers to ex
 ## Demo
 
 Check out the live demo of the Lemonade Stand Store: [https://lemonadestand-matheusnsilva7.netlify.app/](https://lemonadestand-matheusnsilva7.netlify.app/)
-
-## Installation
-
-To run the project locally, follow these steps:
-
-1. Clone this repository: `git clone https://github.com/your-username/lemonade-stand.git`
-2. Navigate to the project directory: `cd lemonade-stand`
-3. Install dependencies: `npm install`
-
-## Usage
-
-1. Start the development server: `npm run dev`
-2. Open your web browser and navigate to `http://localhost:3000`
-
-## Contributing
-
-Contributions are welcome! If you'd like to contribute to the project, follow these steps:
-
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature/add-new-feature`
-3. Make your changes and commit them: `git commit -m "Add new feature"`
-4. Push to the branch: `git push origin feature/add-new-feature`
-5. Create a pull request explaining your changes.
 
 ## License
 
