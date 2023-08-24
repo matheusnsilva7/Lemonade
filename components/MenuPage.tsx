@@ -63,6 +63,7 @@ const Menu = ({ onchange, language }: prop) => {
               width={140}
               height={400}
               className={classes.img}
+              priority={true}
               alt="lemonade"
             />
             <h5 className={classes.text}>Large</h5>
@@ -79,6 +80,7 @@ const Menu = ({ onchange, language }: prop) => {
               width={140}
               height={400}
               className={classes.img}
+              priority={true}
               alt="lemonade"
             />
             <h5 className={classes.text}>Medium</h5>
@@ -96,6 +98,7 @@ const Menu = ({ onchange, language }: prop) => {
               src="/lemonade2.png"
               width={140}
               height={400}
+              priority={true}
               className={classes.img}
               alt="lemonade"
             />
